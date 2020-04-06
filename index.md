@@ -15,7 +15,7 @@
 <p>So the first 2 steps include installing a C compiler and enabling raw mode in terminal,mainly because canonical mode, the default mode in all terminals does not work for applications with complex user interfaces where there are many processes to be run at once. Installing a compiler can be done pretty easily by using administrator commands in the respective operating systems, or installing an IDE in some cases,like Windows.</p><br>
 1.Enabling raw mode<br><br>
 <textarea>
- 
+
  /*** includes **/
 #include <ctype.h>
 #include <errno.h>
@@ -72,9 +72,9 @@ int main() {
   }
 
   return 0;
-    }
+}
   
- </textarea> <br>
+</textarea><br>
     
   <figure> 
    <img src="https://imgur.com/xnOLpKE.png" alt="Chapter 1" width="600" height="400" class="image">
@@ -87,7 +87,8 @@ int main() {
   
   <p>Input and output operations refers to operations like determining the size of the screen,reading input keypresses from the keyboad and mapping them as a special function(Eg. Ctrl-Q), if necessary.It also includes some minor tweaks like refreshing or clearng the screen and determining the cursor positions so that it doesent go off screen.Also includes displaying the cursor position on the screen with the help of tildes.</p>
     
-    <textarea><code>
+<textarea>
+<code>
 
 /*** includes ***/
 #include <ctype.h>
@@ -392,7 +393,8 @@ int main() {
   return 0;
                         }
 
-</code></textarea><br>
+</code>
+</textarea><br>
    <figure>
     <img src="https://imgur.com/xI1CLOS.png" alt="Chapter 2" width="600" height="400" class="image">
     <figcaption>Input being read into the editor</figcaption>
@@ -404,7 +406,7 @@ int main() {
   
       <p>This chapter deals with making the text editor more user friendly by including files, scrolling(horizontal and vertical) while mapping some special keys to move up and down the editor page, including interactions of spaces and tabs with text,some small quirks like moving to the end of the line or moving around using the arrow keys and also, a status bar at the bottom of the screen which displays useful information.</p>
       
-      <textarea><code>
+<textarea><code>
 
 /*** includes ***/
 #define _DEFAULT_SOURCE
@@ -908,9 +910,10 @@ int main(int argc, char *argv[]) {
   }
 
   return 0;
-        }
+}
 
-</code> </textarea>
+</code>
+</textarea>
 
 <p>Firstly we create a structure erow which is used to store various attributes like size and characters. Erow is used in a lot of other functions as an object which points to a certain row and its attributes.Certain conditions are made to ensure that the input matches the output characteristics on the screen. Then <b>editorOpen()</b> is used to introduce files into the text editor i.e Open,copy the text from the file into the editor and close the file too. More memory allocation is done in the next few steps in order to ensure that the memory for the data is dynamically allocated and that it can handle both single line and multiline input. All this is done by various commands in <b>editorOpen()</b> and <b>editorDrawRows()</b>.</p><br>
 
@@ -925,8 +928,8 @@ int main(int argc, char *argv[]) {
   
  <p>In this chapter,we modfify our text viewer into a proper text editor by including operations like inserting characters,saving files to disk, creating a more efficient status bar by indicating modifications,warnings,more errors possible, deletion of characters and insertion of new lines using the keyboard. This converts the text viewer into a proper text editor with all the essential operations available.</p>
    
-   <textarea><code>
-
+<textarea>
+<code>
 /*** includes ***/
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
@@ -1643,8 +1646,8 @@ int main(int argc, char *argv[]) {
 
   return 0;
      }
-
-</code></textarea>
+</code>
+</textarea>
      
  <p>In this chapter, we convert a text viewer into a text editor.One of the first operations is to insert a character into the editor so we see it on the screen. All the code before this was meant for processing the input from the keyboard but did not display it on the screen.We use the function <b>editorRowInsertChar()</b> to insert a character by moving around the memory of 2 strings-the one which we want to insert and the present row. Since we've turned off all the flags in chapter 1,special keys like Enter and Backspace do not work and instead return an ASCII value. More cases are made in <b>editorKeyProcess()</b> in order to handle these keys.</p>
      <p>Next up is saving your files to disk. We use the function <b>editorSave()</b> to copy all the text into a buffer,dynamically allocate memory to it to store in the buffer. Ctrl-S is mapped to this function which saves a file into the buffer. More conditions are added to handle error messages and display modifications to the file which notify the user through the status bar established in Chapter 4. An additional condition is also added to the code which warns the user about quitting without saving and prevents possible loss of data.</p>
