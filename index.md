@@ -1,5 +1,4 @@
 
-<body>   
 <h1>A Blog on Antirez Kilo Editor</h1>
 <h3> What exactly does this blog contain</h3>
 <p> The following content details the experience and how exactly I managed to create a text editor using the guide to              Antirez's Kilo Editor.I'm going to explain how exactly and what I did in order to build the text editor using a number of steps.It is a an excellent guide on how to exactly to do quite a few things like memory allocation,string manipulation,how to recognise and embed different types of filetypes, how to properly save and edit a file etc. The editor is built fully using C and C commands and is recommended to be built in Ubuntu.</p>
