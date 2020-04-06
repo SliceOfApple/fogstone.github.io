@@ -23,9 +23,9 @@
 <p>So the first 2 steps include installing a C compiler and enabling raw mode in terminal,mainly because canonical mode, the default mode in all terminals does not work for applications with complex user interfaces where there are many processes to be run at once. Installing a compiler can be done pretty easily by using administrator commands in the respective operating systems, or installing an IDE in some cases,like Windows.</p><br>
 1.Enabling raw mode<br><br>
           
-<textarea>
-  <code>/*** includes **/
-
+<textarea><code>
+ 
+ /*** includes **/
 #include <ctype.h>
 #include <errno.h>
 #include <stdio.h>
@@ -81,7 +81,9 @@ int main() {
   }
 
   return 0;
-    }</code> </textarea><br>
+    }
+  
+ </code> </textarea><br>
     
   <figure> 
    <img src="https://imgur.com/xnOLpKE.png" alt="Chapter 1" width="600" height="400" class="image">
@@ -94,8 +96,9 @@ int main() {
   
   <p>Input and output operations refers to operations like determining the size of the screen,reading input keypresses from the keyboad and mapping them as a special function(Eg. Ctrl-Q), if necessary.It also includes some minor tweaks like refreshing or clearng the screen and determining the cursor positions so that it doesent go off screen.Also includes displaying the cursor position on the screen with the help of tildes.</p>
     
-    <textarea><code>/*** includes ***/
+    <textarea><code>
 
+/*** includes ***/
 #include <ctype.h>
 #include <errno.h>
 #include <stdio.h>
@@ -396,7 +399,9 @@ int main() {
   }
 
   return 0;
-                        }</code></textarea><br>
+                        }
+
+</code></textarea><br>
    <figure>
     <img src="https://imgur.com/xI1CLOS.png" alt="Chapter 2" width="600" height="400" class="image">
     <figcaption>Input being read into the editor</figcaption>
@@ -408,8 +413,9 @@ int main() {
   
       <p>This chapter deals with making the text editor more user friendly by including files, scrolling(horizontal and vertical) while mapping some special keys to move up and down the editor page, including interactions of spaces and tabs with text,some small quirks like moving to the end of the line or moving around using the arrow keys and also, a status bar at the bottom of the screen which displays useful information.</p>
       
-      <textarea><code>/*** includes ***/
+      <textarea><code>
 
+/*** includes ***/
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -911,7 +917,9 @@ int main(int argc, char *argv[]) {
   }
 
   return 0;
-        }</code> </textarea>
+        }
+
+</code> </textarea>
 
 <p>Firstly we create a structure erow which is used to store various attributes like size and characters. Erow is used in a lot of other functions as an object which points to a certain row and its attributes.Certain conditions are made to ensure that the input matches the output characteristics on the screen. Then <b>editorOpen()</b> is used to introduce files into the text editor i.e Open,copy the text from the file into the editor and close the file too. More memory allocation is done in the next few steps in order to ensure that the memory for the data is dynamically allocated and that it can handle both single line and multiline input. All this is done by various commands in <b>editorOpen()</b> and <b>editorDrawRows()</b>.</p><br>
 
@@ -926,8 +934,9 @@ int main(int argc, char *argv[]) {
   
  <p>In this chapter,we modfify our text viewer into a proper text editor by including operations like inserting characters,saving files to disk, creating a more efficient status bar by indicating modifications,warnings,more errors possible, deletion of characters and insertion of new lines using the keyboard. This converts the text viewer into a proper text editor with all the essential operations available.</p>
    
-   <textarea><code>/*** includes ***/
+   <textarea><code>
 
+/*** includes ***/
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -1642,7 +1651,9 @@ int main(int argc, char *argv[]) {
   }
 
   return 0;
-     }</code></textarea>
+     }
+
+</code></textarea>
      
  <p>In this chapter, we convert a text viewer into a text editor.One of the first operations is to insert a character into the editor so we see it on the screen. All the code before this was meant for processing the input from the keyboard but did not display it on the screen.We use the function <b>editorRowInsertChar()</b> to insert a character by moving around the memory of 2 strings-the one which we want to insert and the present row. Since we've turned off all the flags in chapter 1,special keys like Enter and Backspace do not work and instead return an ASCII value. More cases are made in <b>editorKeyProcess()</b> in order to handle these keys.</p>
      <p>Next up is saving your files to disk. We use the function <b>editorSave()</b> to copy all the text into a buffer,dynamically allocate memory to it to store in the buffer. Ctrl-S is mapped to this function which saves a file into the buffer. More conditions are added to handle error messages and display modifications to the file which notify the user through the status bar established in Chapter 4. An additional condition is also added to the code which warns the user about quitting without saving and prevents possible loss of data.</p>
@@ -1659,8 +1670,9 @@ int main(int argc, char *argv[]) {
        
        5.Search operations<br>
 <p>This chapter deals with search operations and all the possible ways to utilize those operations. It consists of implementing a search function,then using arrow keys to search back and forth and returning the cursor positions when finished.</p>
-     <textarea><code>/*** includes ***/
+     <textarea><code>
 
+/*** includes ***/
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -2455,7 +2467,9 @@ int main(int argc, char *argv[]) {
   }
 
   return 0;
-       }</code></textarea>
+       }
+
+</code></textarea>
    
  <p>At this point,most of the necessary functions have already been implemented. This is one of the operations that makes the interface far easier to use- a search function. First, we use <b>editorFind()</b> to check whether or not we want to search for something, then use <b>editorRowRxtoCx()</b> to iterate through all the rows,searching for the specified string. We then map Ctrl-F to the <b>editorFind()</b> function for easy access. To make searching easier, <b>editorPrompt()</b> is used in order to find the result while the string is being typed. After that, small adjustments and conditions are added to <b>editorFindCallBack()</b> so that arrow keys can be used to search back and forth and that the cursor regains its original position after searching.</p>
       
@@ -2469,8 +2483,9 @@ int main(int argc, char *argv[]) {
   </figure>    
        6.Syntax highlighting<br>
        <p>This chapter deals with syntax highlighting and filetype detection.</p>
- <textarea><code>/*** includes ***/
+ <textarea><code>
 
+/*** includes ***/
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
@@ -3536,7 +3551,9 @@ int main(int argc, char *argv[]) {
   }
 
   return 0;
-   }</code></textarea>
+   }
+
+</code></textarea>
    <p>This chapter mainly deals with syntax highlighting. First we use a function <b>editorUpdateSyntax()</b> to edit each digit in the colour red, then update that information in <b>editorUpdateRow()</b> which iterates each row looking for integers and assigns HL_NUMBER to them which changes the colour to red. <b>editorSyntaxtoColor()</b> is used to match each HL_ to return a certain integer which is then used in an escape sequence to change colour. A variable current_color is used to check whether the selected character is of a special HL_ type or not. A small adjustment is made to highlight the search results and remove the highlight once finished.</p>
   <p> The second part of the chapter deals with filetype detection and saving-a new structure is created to hold the filename and the type. The necessary modifications are made to <b>editorDrawStatusBar()</b> and <b>editorUpdateSyntax()</b> to hold the attributes of the file.<b>editorSelectSyntaxHighlight()</b> is used to check the filetype by looping through the HLBD array for the proper attribute.</p>
    <p>More additions are made to the structure and <b>editorUpdateSyntax()</b> in order to highlight strings, single line comments,multiple line comments and single line comments inside multiple line comments.This concludes the building of the Antirez Kilo Editor.</p>
