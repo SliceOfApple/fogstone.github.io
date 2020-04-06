@@ -1,3 +1,4 @@
+>noscript>
 <!DOCTYPE html>
 <html>
 <head>
@@ -3555,3 +3556,4 @@ int main(int argc, char *argv[]) {
    Scroll to top
 </body>
 </html>
+</noscript>
