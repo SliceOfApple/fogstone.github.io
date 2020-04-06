@@ -1,11 +1,4 @@
->noscript>
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<title>Fog's Blog</title>
-</head>
+
 <body>   
 <h1>A Blog on Antirez Kilo Editor</h1>
 <h3> What exactly does this blog contain</h3>
@@ -3571,5 +3564,4 @@ int main(int argc, char *argv[]) {
    </ol>
    Scroll to top
 </body>
-</html>
-</noscript>
+
