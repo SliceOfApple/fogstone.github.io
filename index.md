@@ -74,7 +74,7 @@ int main() {
   return 0;
     }
   
-  <br>
+ </textarea> <br>
     
   <figure> 
    <img src="https://imgur.com/xnOLpKE.png" alt="Chapter 1" width="600" height="400" class="image">
