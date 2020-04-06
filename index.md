@@ -22,8 +22,7 @@
           
 <p>So the first 2 steps include installing a C compiler and enabling raw mode in terminal,mainly because canonical mode, the default mode in all terminals does not work for applications with complex user interfaces where there are many processes to be run at once. Installing a compiler can be done pretty easily by using administrator commands in the respective operating systems, or installing an IDE in some cases,like Windows.</p><br>
 1.Enabling raw mode<br><br>
- <script>
-<textarea><code>
+<textarea>
  
  /*** includes **/
 #include <ctype.h>
@@ -83,7 +82,7 @@ int main() {
   return 0;
     }
   
- </code> </textarea></script><br>
+  </textarea><br>
     
   <figure> 
    <img src="https://imgur.com/xnOLpKE.png" alt="Chapter 1" width="600" height="400" class="image">
